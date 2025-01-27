@@ -6,7 +6,7 @@
 /*   By: mohel-am <mohel-am@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 12:27:11 by mohel-am          #+#    #+#             */
-/*   Updated: 2025/01/27 01:13:40 by mohel-am         ###   ########.fr       */
+/*   Updated: 2025/01/27 01:47:56 by mohel-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,30 @@ void	parse_integer_part(const char **str, double *res, int *sign)
 		*res = *res * 10 + (**str - '0');
 		(*str)++;
 	}
+}
+
+void	check_args(int ac, char **av, t_fractol *data)
+{
+	if (ac < 2 || av[1] == NULL )
+		usage();
+	if (ft_strncmp(av[1], "mandelbrot", 10) == 0)
+		data->type = MANDELBROT;
+	else if (ft_strncmp(av[1], "julia", 5) == 0)
+	{
+		if (ac == 2)
+		{
+			data->julia_c.real = -0.7;
+			data->julia_c.imaginaire = 0.27015;
+		}
+		else if (ac == 4)
+		{
+			data->julia_c.real = ft_atof(av[2]);
+			data->julia_c.imaginaire = ft_atof(av[3]);
+		}
+		else
+			usage();
+		data->type = JULIA;
+	}
+	else
+		usage();
 }

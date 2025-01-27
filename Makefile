@@ -6,7 +6,7 @@ SRC_DIR		= .
 OBJ_DIR		= obj
 LIBFT_DIR	= libft
 MLX_DIR		= minilibx
-SRCS		= main.c helpers.c helpers2.c init.c julia_frac.c key_hooks.c mandel.c render.c
+SRCS		= main.c helpers.c helpers2.c init.c julia.c key_hooks.c mandel.c render.c
 OBJS		= $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 LIBFT		= $(LIBFT_DIR)/libft.a
 MLX			= $(MLX_DIR)/libmlx.a

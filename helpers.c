@@ -6,7 +6,7 @@
 /*   By: mohel-am <mohel-am@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 12:27:11 by mohel-am          #+#    #+#             */
-/*   Updated: 2025/01/27 01:47:56 by mohel-am         ###   ########.fr       */
+/*   Updated: 2025/01/27 02:28:26 by mohel-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ void	check_args(int ac, char **av, t_fractol *data)
 {
 	if (ac < 2 || av[1] == NULL )
 		usage();
-	if (ft_strncmp(av[1], "mandelbrot", 10) == 0)
+	if (ft_strncmp(av[1], "mandelbrot", 10) == 0 && ft_strlen(av[1]) == 10)
 		data->type = MANDELBROT;
-	else if (ft_strncmp(av[1], "julia", 5) == 0)
+	else if (ft_strncmp(av[1], "julia", 5) == 0 && ft_strlen(av[1]) == 5)
 	{
 		if (ac == 2)
 		{

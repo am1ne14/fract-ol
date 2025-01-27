@@ -6,7 +6,7 @@
 /*   By: mohel-am <mohel-am@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 22:47:48 by mohel-am          #+#    #+#             */
-/*   Updated: 2025/01/25 22:48:03 by mohel-am         ###   ########.fr       */
+/*   Updated: 2025/01/27 21:26:12 by mohel-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	init_data(t_fractol *data)
 	data->offset_x = 0.0;
 	data->offset_y = 0.0;
 	data->max_iter = 100;
-	data->color_shift = 0;
+	data->color_shift = 6;
 	data->bpp = 0;
 	data->line_length = 0;
 	data->endian = 0;

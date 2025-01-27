@@ -6,7 +6,7 @@
 /*   By: mohel-am <mohel-am@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 02:03:30 by mohel-am          #+#    #+#             */
-/*   Updated: 2025/01/26 02:20:57 by mohel-am         ###   ########.fr       */
+/*   Updated: 2025/01/27 21:29:38 by mohel-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	iter_mandel(t_comp z, int max_iter)
 
 	iter = 0;
 	c = z;
-	while ((z.real * z.real + z.imaginaire * z.imaginaire <= 4)
+	while ((z.real * z.real + z.imaginaire * z.imaginaire <= 10)
 		&& iter < max_iter)
 	{
 		tmp = z.real * z.real - z.imaginaire * z.imaginaire + c.real;

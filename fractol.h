@@ -6,14 +6,14 @@
 /*   By: mohel-am <mohel-am@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 02:17:36 by mohel-am          #+#    #+#             */
-/*   Updated: 2025/01/27 21:24:26 by mohel-am         ###   ########.fr       */
+/*   Updated: 2025/01/28 21:18:02 by mohel-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include "minilibx/mlx.h"
+# include "minilibx-linux/mlx.h"
 # include "libft/libft.h"
 # include <math.h>
 

@@ -25,8 +25,8 @@ void	julia_frac(t_fractol *data, int y)
 		x = 0;
 		while (x < WIDTH)
 		{
-			z.real = (x - WIDTH / 2.0) * 4.0 / WIDTH + data->offset_x;
-			z.imaginaire = (y - HEIGHT / 2.0) * 4.0 / HEIGHT + data->offset_y;
+			z.real = (x - WIDTH / 2.0) * 4.0 / WIDTH / data->zoom + data->offset_x;
+			z.imaginaire = (y - HEIGHT / 2.0) * 4.0 / HEIGHT / data->zoom + data->offset_y;
 			iter = julia_iter(z, data->julia_c, data->max_iter);
 			color = color_swap(iter, data->max_iter, data->color_shift);
 			pixel = (y * data->line_length) + (x * data->bpp / 8);

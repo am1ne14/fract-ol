@@ -1,5 +1,5 @@
 NAME		= fractol
-CC			= cc
+CC		= cc
 CFLAGS		= -Wall -Wextra -Werror
 INCLUDES	= -I includes -I libft -I minilibx
 SRC_DIR		= .

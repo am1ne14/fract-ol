@@ -19,7 +19,7 @@
 
 # define WIDTH 800
 # define HEIGHT 800
-# define MAX_INTERATIONS 100
+# define MAX_INTERATIONS 20
 
 # define MANDELBROT 1
 # define JULIA 2

@@ -25,10 +25,8 @@ void	mandel_frac(t_fractol *data, int y)
 		x = 0;
 		while (x < WIDTH)
 		{
-			z.real = (x - WIDTH / 2.0) * 4.0 / WIDTH
-				/ data->zoom + data->offset_x;
-			z.imaginaire = (y - HEIGHT / 2.0) * 4.0 / HEIGHT
-				/ data->zoom + data->offset_y;
+			z.real = (x - WIDTH / 2.0) * 4.0 / WIDTH / data->zoom + data->offset_x;
+			z.imaginaire = (y - HEIGHT / 2.0) * 4.0 / HEIGHT / data->zoom + data->offset_y;
 			iter = iter_mandel(z, data->max_iter);
 			color = color_swap(iter, data->max_iter, data->color_shift);
 			pixel = (y * data->line_length) + (x * data->bpp / 8);
@@ -47,7 +45,7 @@ int	iter_mandel(t_comp z, int max_iter)
 
 	iter = 0;
 	c = z;
-	while ((z.real * z.real + z.imaginaire * z.imaginaire <= 10)
+	while ((z.real * z.real + z.imaginaire * z.imaginaire <= 4)
 		&& iter < max_iter)
 	{
 		tmp = z.real * z.real - z.imaginaire * z.imaginaire + c.real;

@@ -6,20 +6,20 @@
 /*   By: mohel-am <mohel-am@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 02:17:36 by mohel-am          #+#    #+#             */
-/*   Updated: 2025/01/28 21:18:02 by mohel-am         ###   ########.fr       */
+/*   Updated: 2025/01/29 01:01:01 by mohel-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include "minilibx-linux/mlx.h"
+# include "/home/mohel-am/Documents/minilibx-linux/mlx.h"
 # include "libft/libft.h"
 # include <math.h>
 
 # define WIDTH 800
 # define HEIGHT 800
-# define MAX_INTERATIONS 20
+# define MAX_INTERATIONS 100
 
 # define MANDELBROT 1
 # define JULIA 2

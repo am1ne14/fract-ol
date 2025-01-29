@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   julia_frac.c                                       :+:      :+:    :+:   */
+/*   julia.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohel-am <mohel-am@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 22:51:21 by mohel-am          #+#    #+#             */
-/*   Updated: 2025/01/26 02:20:09 by mohel-am         ###   ########.fr       */
+/*   Updated: 2025/01/29 01:03:35 by mohel-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ void	julia_frac(t_fractol *data, int y)
 		x = 0;
 		while (x < WIDTH)
 		{
-			z.real = (x - WIDTH / 2.0) * 4.0 / WIDTH / data->zoom + data->offset_x;
-			z.imaginaire = (y - HEIGHT / 2.0) * 4.0 / HEIGHT / data->zoom + data->offset_y;
+			z.real = (x - WIDTH / 2.0) * 4.0 / WIDTH
+				/ data->zoom + data->offset_x;
+			z.imaginaire = (y - HEIGHT / 2.0) * 4.0 / HEIGHT
+				/ data->zoom + data->offset_y;
 			iter = julia_iter(z, data->julia_c, data->max_iter);
 			color = color_swap(iter, data->max_iter, data->color_shift);
 			pixel = (y * data->line_length) + (x * data->bpp / 8);

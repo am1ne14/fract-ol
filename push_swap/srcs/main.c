@@ -18,11 +18,13 @@ int	main(int ac, char **av)
 	t_stack	*b;
 
 	if (ac < 2)
-		return (0);
+		return (1);
 	if (!check_input(av))
 		exit_error();
 	a = init_stack(ac, av);
 	b = NULL;
+	if (check_stack(a))
+		exit_error();	
 	if (!is_sorted(a))
 	{
 		index_stack(&a);

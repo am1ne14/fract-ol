@@ -52,7 +52,7 @@ void	process_argument(char *arg, t_stack **stack)
 		add_to_stack(stack, new);
 		j++;
 	}
-	free(splitted_av);
+	free_split(splitted_av);
 }
 
 t_stack	*create_new_node(int value)
@@ -87,4 +87,27 @@ void	add_to_stack(t_stack **stack, t_stack *new)
 	while (temp->next)
 		temp = temp->next;
 	temp->next = new;
+}
+
+int	check_stack(t_stack *a)
+{
+	t_stack	*tmp;
+	t_stack	*current;
+
+	current = a;
+	while (current)
+	{
+		tmp = current->next;
+		while (tmp)
+		{
+			if (current->value == tmp->value)
+			{
+				free_stack(a);
+				return (1);
+			}
+			tmp = tmp->next;
+		}
+		current = current->next;
+	}
+	return (0);
 }

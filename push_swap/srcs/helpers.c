@@ -6,7 +6,7 @@
 /*   By: mohel-am <mohel-am@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:37:04 by mohel-am          #+#    #+#             */
-/*   Updated: 2025/03/13 17:00:33 by mohel-am         ###   ########.fr       */
+/*   Updated: 2025/03/16 14:40:32 by mohel-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
  *	void	exit_error(void);
  *	void	free_stack(t_stack *stack);
  *	int	get_lowest_index_position(t_stack **stack);
+ *	void	free_split(char **av)
  * */
 
 int	absolute_value(int nb)
@@ -63,4 +64,19 @@ int	get_lowest_index_position(t_stack **stack)
 		tmp = tmp->next;
 	}
 	return (lowest_pos);
+}
+
+void	free_split(char **av)
+{
+	int	i;
+
+	i = 0;
+	if (av == NULL)
+		return ;
+	while (av[i] != NULL)
+	{
+		free(av[i]);
+		i++;
+	}
+	free(av);
 }

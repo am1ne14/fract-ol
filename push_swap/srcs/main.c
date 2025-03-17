@@ -6,7 +6,7 @@
 /*   By: mohel-am <mohel-am@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:14:44 by mohel-am          #+#    #+#             */
-/*   Updated: 2025/03/13 14:14:52 by mohel-am         ###   ########.fr       */
+/*   Updated: 2025/03/16 14:27:15 by mohel-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int ac, char **av)
 	a = init_stack(ac, av);
 	b = NULL;
 	if (check_stack(a))
-		exit_error();	
+		exit_error();
 	if (!is_sorted(a))
 	{
 		index_stack(&a);

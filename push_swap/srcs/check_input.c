@@ -6,7 +6,7 @@
 /*   By: mohel-am <mohel-am@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:15:47 by mohel-am          #+#    #+#             */
-/*   Updated: 2025/03/13 14:18:18 by mohel-am         ###   ########.fr       */
+/*   Updated: 2025/03/16 14:26:06 by mohel-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,19 @@ int	check_input(char **av)
 {
 	char	**splitted_av;
 	int		i;
+	int		j;
 
 	i = 1;
+	j = 0;
 	while (av[i])
 	{
 		splitted_av = ft_split(av[i], ' ');
+		while (splitted_av[j])
+		{
+			if (!is_number(splitted_av[j]))
+				return (0);
+			j++;
+		}
 		if (!check_splitted_numbers(splitted_av))
 		{
 			free_split(splitted_av);
@@ -37,21 +45,6 @@ int	check_input(char **av)
 		i++;
 	}
 	return (1);
-}
-
-void	free_split(char **av)
-{
-	int i = 0;
-
-    if (av == NULL) {
-        return;
-    }
-
-    while (av[i] != NULL) {
-        free(av[i]);
-        i++;
-    }
-    free(av);
 }
 
 static int	check_int_range(char *str)
@@ -107,21 +100,13 @@ long	ft_atol(const char *str)
 	i = 0;
 	sign = 1;
 	result = 0;
-	if (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-')
 	{
-		if (str[i] == '-')
-			sign = -1;
+		sign = -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (result > (LONG_MAX - (str[i] - '0')) / 10)
-		{
-			if (sign == 1)
-				return (LONG_MAX);
-			else
-				return (LONG_MIN);
-		}
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}

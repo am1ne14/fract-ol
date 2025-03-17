@@ -61,6 +61,8 @@ void	sort_b_stack(t_stack **a, t_stack **b)
 {
 	while (*b)
 	{
+		get_position(a);
+		get_position(b);
 		get_target_position(a, b);
 		get_cost(a, b);
 		do_cheapest_move(a, b);

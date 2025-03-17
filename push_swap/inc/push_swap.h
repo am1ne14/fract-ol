@@ -6,7 +6,7 @@
 /*   By: mohel-am <mohel-am@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 17:11:33 by mohel-am          #+#    #+#             */
-/*   Updated: 2025/03/13 17:37:27 by mohel-am         ###   ########.fr       */
+/*   Updated: 2025/03/16 14:33:46 by mohel-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	index_stack(t_stack **stack);
 int		get_stack_size(t_stack *stack);
 int		find_min_unindexed(t_stack *stack);
 void	push_swap(t_stack **a, t_stack **b);
-int	check_stack(t_stack *a);
+int		check_stack(t_stack *a);
 void	free_split(char **av);
 long	ft_atol(const char *str);
 

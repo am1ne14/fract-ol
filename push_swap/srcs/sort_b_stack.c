@@ -25,8 +25,6 @@ void	get_target_position(t_stack **a, t_stack **b)
 	int		target_pos;
 
 	tmp_b = *b;
-	get_position(a);
-	get_position(b);
 	while (tmp_b)
 	{
 		target_pos = get_target(a, tmp_b->index);

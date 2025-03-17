@@ -43,7 +43,7 @@ void	process_argument(char *arg, t_stack **stack)
 	j = 0;
 	while (splitted_av[j])
 	{
-		new = create_new_node((int)ft_atoi(splitted_av[j]));
+		new = create_new_node(ft_atoi(splitted_av[j]));
 		if (!new)
 		{
 			free_stack(*stack);

@@ -22,20 +22,20 @@
 int	check_input(char **av)
 {
 	char	**splitted_av;
+	char	*trimmed_arg;
 	int		i;
-	int		j;
 
 	i = 1;
-	j = 0;
 	while (av[i])
 	{
-		splitted_av = ft_split(av[i], ' ');
-		while (splitted_av[j])
+		trimmed_arg = ft_strtrim(av[i], " ");
+		if (ft_strlen(trimmed_arg) == 0)
 		{
-			if (!is_number(splitted_av[j]))
-				return (0);
-			j++;
+			free(trimmed_arg);
+			exit_error();
 		}
+		free(trimmed_arg);
+		splitted_av = ft_split(av[i], ' ');
 		if (!check_splitted_numbers(splitted_av))
 		{
 			free_split(splitted_av);

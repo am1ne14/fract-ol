@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 		exit_error();
 	a = init_stack(ac, av);
 	b = NULL;
-	if (check_stack(a))
+	if (check_dup(a))
 		exit_error();
 	if (!is_sorted(a))
 	{

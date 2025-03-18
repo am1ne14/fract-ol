@@ -12,10 +12,11 @@
 
 #include "../inc/push_swap.h"
 /*
- *	t_stack *init_stack(int ac, char **av);
- *	void process_argument(char *arg, t_stack **stack);
+ *	t_stack	*init_stack(int ac, char **av);
+ *	void	process_argument(char *arg, t_stack **stack);
  *	t_stack	*create_new_node(int value);
  *	void	add_to_stack(t_stack **stack, t_stack *new);
+ *	int	check_dup(t_stack *a);
  * */
 
 t_stack	*init_stack(int ac, char **av)
@@ -89,7 +90,7 @@ void	add_to_stack(t_stack **stack, t_stack *new)
 	temp->next = new;
 }
 
-int	check_stack(t_stack *a)
+int	check_dup(t_stack *a)
 {
 	t_stack	*tmp;
 	t_stack	*current;

@@ -13,10 +13,10 @@
 #include "../inc/push_swap.h"
 /*
  *	int	is_number(char *str);
- *	int	check_duplicates(char **av);
+ *	int	check_int_range(char *str);
  *	int	check_splitted_numbers(char **splitted_av);
  *	int	check_input(char **av);
- *	 void	free_split(char **av);
+ *	long	ft_atol(const char *str);
  * */
 
 int	check_input(char **av)
@@ -47,7 +47,7 @@ int	check_input(char **av)
 	return (1);
 }
 
-static int	check_int_range(char *str)
+int	check_int_range(char *str)
 {
 	long	num;
 

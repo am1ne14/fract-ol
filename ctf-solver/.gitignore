@@ -1,0 +1,41 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+mass_solver.log
+
+# Temporary files
+/tmp/
+*.tmp
+*.temp
+
+# Demo and test files
+demo.jpg
+test_images/
+*_analysis.json
+example_results.json
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# OS specific
+.DS_Store
+Thumbs.db

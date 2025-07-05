@@ -200,43 +200,27 @@ class MassSolver:
         start_time = time.time()
         
         try:
-            with self.timeout_handler(self.timeout_per_game):
-                # Get .so files for this game
-                game_dir = Path(game_path).parent
-                so_files = list(game_dir.glob("*.so"))
-                
-                # Use analysis data if available for optimization
-                solver_kwargs = {}
-                if self.game_analysis:
-                    # Apply optimizations based on analysis
-                    game_name = game_dir.name
-                    if game_name in self.game_analysis.get("games", {}):
-                        # Could add specific optimizations here
-                        pass
-                
-                solver = GameSolver(game_path, [str(so) for so in so_files])
-                
-                # Try mathematical solution first (faster)
-                solution = solver.brute_force_solve(max_attempts=10000)
-                if solution:
-                    # Verify with actual game
-                    success, output = solver.run_game(solution)
-                    if success:
-                        solve_time = time.time() - start_time
-                        return GameResult(
-                            game_id=game_id,
-                            game_path=game_path,
-                            success=True,
-                            solution=solution,
-                            output=output,
-                            error=None,
-                            solve_time=solve_time
-                        )
-                
-                # Fall back to direct game execution
-                result = solver.solve_with_game(max_attempts=5000)
-                if result:
-                    solution, output = result
+            # Get .so files for this game
+            game_dir = Path(game_path).parent
+            so_files = list(game_dir.glob("*.so"))
+            
+            # Use analysis data if available for optimization
+            solver_kwargs = {}
+            if self.game_analysis:
+                # Apply optimizations based on analysis
+                game_name = game_dir.name
+                if game_name in self.game_analysis.get("games", {}):
+                    # Could add specific optimizations here
+                    pass
+            
+            solver = GameSolver(game_path, [str(so) for so in so_files])
+            
+            # Try mathematical solution first (faster)
+            solution = solver.brute_force_solve(max_attempts=10000)
+            if solution:
+                # Verify with actual game
+                success, output = solver.run_game(solution)
+                if success:
                     solve_time = time.time() - start_time
                     return GameResult(
                         game_id=game_id,
@@ -247,20 +231,23 @@ class MassSolver:
                         error=None,
                         solve_time=solve_time
                     )
-                
-                # No solution found
+            
+            # Fall back to direct game execution
+            result = solver.solve_with_game(max_attempts=5000)
+            if result:
+                solution, output = result
                 solve_time = time.time() - start_time
                 return GameResult(
                     game_id=game_id,
                     game_path=game_path,
-                    success=False,
-                    solution=None,
-                    output="",
-                    error="No solution found",
+                    success=True,
+                    solution=solution,
+                    output=output,
+                    error=None,
                     solve_time=solve_time
                 )
-        
-        except TimeoutError:
+            
+            # No solution found
             solve_time = time.time() - start_time
             return GameResult(
                 game_id=game_id,
@@ -268,7 +255,7 @@ class MassSolver:
                 success=False,
                 solution=None,
                 output="",
-                error="Timeout",
+                error="No solution found",
                 solve_time=solve_time
             )
         

@@ -10,6 +10,26 @@ This toolkit provides a complete solution for a CTF challenge that involves:
 - Games use dynamic .so file loading and complex transformations
 - Successful games output data that must be assembled into a JPG image
 
+## Quick Start
+
+### Unified Interface
+The fastest way to run the complete CTF solving workflow:
+
+```bash
+# Run complete workflow (analysis → mass solve → JPG assembly)
+python ctf_runner.py ./ctf_games --workers 16 --timeout 60
+
+# Test on a single game first
+python ctf_runner.py ./ctf_games --test-game ./ctf_games/game1/game
+
+# Show current progress
+python ctf_runner.py ./ctf_games --status
+```
+
+### Individual Components
+
+Use these for fine-grained control or debugging:
+
 ## Components
 
 ### 1. `solve_single.py` - Single Game Solver
@@ -77,7 +97,37 @@ python assemble_jpg.py mass_solve_results.json --output final_image.jpg
 - `--test-images` - Create test images from data subsets
 - `--analyze-only` - Only analyze data structure
 
+### 5. `ctf_runner.py` - Unified Workflow Runner
+Provides a single interface for the complete solving workflow:
+- **Guided execution** - step-by-step progress with clear status
+- **Flexible modes** - run individual phases or complete workflow
+- **Progress tracking** - status monitoring and resumption
+- **Error handling** - graceful failure handling and reporting
+
+**Usage:**
+```bash
+# Complete workflow
+python ctf_runner.py ./ctf_games --workers 16 --timeout 60
+
+# Individual phases
+python ctf_runner.py ./ctf_games --analyze-only
+python ctf_runner.py ./ctf_games --solve-only --workers 8
+python ctf_runner.py ./ctf_games --assemble-only
+
+# Testing and monitoring
+python ctf_runner.py ./ctf_games --test-game ./ctf_games/game1/game
+python ctf_runner.py ./ctf_games --status
+```
+
 ## Complete Workflow
+
+### Quick Start (Recommended)
+```bash
+# One command to solve the entire CTF challenge
+python ctf_runner.py ./ctf_games --workers 16 --timeout 60
+```
+
+### Manual Step-by-Step Workflow
 
 ### Step 1: Analyze Games (Optional but Recommended)
 ```bash
@@ -155,10 +205,13 @@ Each game in the CTF challenge:
 ## File Structure
 ```
 ctf-solver/
+├── ctf_runner.py        # 🚀 Main unified interface
 ├── solve_single.py      # Single game solver
 ├── analyze_games.py     # Pattern analysis tool
 ├── mass_solver.py       # Mass automation solver
 ├── assemble_jpg.py      # JPG assembly tool
+├── create_demo.py       # Demo environment creator
+├── .gitignore          # Git ignore rules
 └── README.md           # This documentation
 ```
 

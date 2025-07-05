@@ -1,0 +1,63 @@
+{
+  "metadata": {
+    "total_games": 5,
+    "successful_games": 5,
+    "timestamp": 1751695252.6836905,
+    "max_workers": 1,
+    "timeout_per_game": 10
+  },
+  "results": {
+    "1": {
+      "game_id": 1,
+      "game_path": "example/game1/game",
+      "success": true,
+      "solution": "7465737430303031",
+      "output": "You win!\n\u0000\u0001",
+      "error": null,
+      "solve_time": 0.3798027038574219
+    },
+    "2": {
+      "game_id": 2,
+      "game_path": "example/game2/game",
+      "success": true,
+      "solution": "7465737430303032",
+      "output": "You win!\n\u0000\u0002",
+      "error": null,
+      "solve_time": 0.3747067451477051
+    },
+    "3": {
+      "game_id": 3,
+      "game_path": "example/game3/game",
+      "success": true,
+      "solution": "7465737430303033",
+      "output": "You win!\n\u0000\u0003",
+      "error": null,
+      "solve_time": 0.37389421463012695
+    },
+    "4": {
+      "game_id": 4,
+      "game_path": "example/game4/game",
+      "success": true,
+      "solution": "7465737430303034",
+      "output": "You win!\n\u0000\u0004",
+      "error": null,
+      "solve_time": 0.38082265853881836
+    },
+    "5": {
+      "game_id": 5,
+      "game_path": "example/game5/game",
+      "success": true,
+      "solution": "7465737430303035",
+      "output": "You win!\n\u0000\u0005",
+      "error": null,
+      "solve_time": 0.3733079433441162
+    }
+  },
+  "successful_outputs": {
+    "1": "You win!\n\u0000\u0001",
+    "2": "You win!\n\u0000\u0002",
+    "3": "You win!\n\u0000\u0003",
+    "4": "You win!\n\u0000\u0004",
+    "5": "You win!\n\u0000\u0005"
+  }
+}

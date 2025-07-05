@@ -1,0 +1,63 @@
+{
+  "metadata": {
+    "total_games": 5,
+    "successful_games": 5,
+    "timestamp": 1234567890,
+    "max_workers": 1,
+    "timeout_per_game": 30
+  },
+  "results": {
+    "1": {
+      "game_id": 1,
+      "game_path": "./example/game1/game",
+      "success": true,
+      "solution": "7465737430303031",
+      "output": "You win!\nBinary data chunk 1",
+      "error": null,
+      "solve_time": 1.5
+    },
+    "2": {
+      "game_id": 2,
+      "game_path": "./example/game2/game",
+      "success": true,
+      "solution": "7465737430303032",
+      "output": "You win!\nBinary data chunk 2",
+      "error": null,
+      "solve_time": 1.5
+    },
+    "3": {
+      "game_id": 3,
+      "game_path": "./example/game3/game",
+      "success": true,
+      "solution": "7465737430303033",
+      "output": "You win!\nBinary data chunk 3",
+      "error": null,
+      "solve_time": 1.5
+    },
+    "4": {
+      "game_id": 4,
+      "game_path": "./example/game4/game",
+      "success": true,
+      "solution": "7465737430303034",
+      "output": "You win!\nBinary data chunk 4",
+      "error": null,
+      "solve_time": 1.5
+    },
+    "5": {
+      "game_id": 5,
+      "game_path": "./example/game5/game",
+      "success": true,
+      "solution": "7465737430303035",
+      "output": "You win!\nBinary data chunk 5",
+      "error": null,
+      "solve_time": 1.5
+    }
+  },
+  "successful_outputs": {
+    "1": "You win!\nffd800ff",
+    "2": "You win!\n02020202",
+    "3": "You win!\n03030303",
+    "4": "You win!\n04040404",
+    "5": "You win!\nffd900ff"
+  }
+}

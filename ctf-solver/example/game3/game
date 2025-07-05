@@ -1,0 +1,10 @@
+#!/bin/bash
+# Mock game 3
+read -n 8 input
+if [ "$input" == "test0003" ]; then
+    echo "You win!"
+    # Output some mock binary data (JPG chunk)
+    echo -ne "\xFF\xD8\x00\x03"
+else
+    echo "Try again!"
+fi

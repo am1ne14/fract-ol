@@ -1,0 +1,9 @@
+/obj/
+/libft/*.o
+/libft/libft.a
+/minilibx-linux/Makefile.gen
+/minilibx-linux/test/Makefile.gen
+/minilibx-linux/libmlx.a
+/minilibx-linux/libmlx_*.a
+/minilibx-linux/obj/
+/minilibx-linux/test/mlx-test

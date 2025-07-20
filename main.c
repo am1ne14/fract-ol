@@ -33,9 +33,9 @@ int	main(int ac, char **av)
 		error_exit("Failed to get image data address\n");
 	if (data.type != 0)
 		render(&data);
-	mlx_hook(data.win, 17, 0, clear_fractol, &data);
-	mlx_key_hook(data.win, handle_key, &data);
-	mlx_mouse_hook(data.win, handle_mouse, &data);
+	mlx_hook(data.win, 17, 0, (int (*)())clear_fractol, &data);
+	mlx_key_hook(data.win, (int (*)())handle_key, &data);
+	mlx_mouse_hook(data.win, (int (*)())handle_mouse, &data);
 	mlx_loop(data.mlx);
 	return (0);
 }
